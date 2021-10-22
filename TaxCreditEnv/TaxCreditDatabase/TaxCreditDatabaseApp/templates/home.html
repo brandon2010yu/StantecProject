@@ -1,0 +1,175 @@
+{% load static %}
+
+{% block content %}
+<!doctype html>
+
+
+
+<style>
+    .middle {
+      background-color: lightsteelblue;
+      width: 1000px;
+      height: 400px;
+      padding: 50px;
+      margin: 150px;
+      position: relative;
+    }
+    /* "https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg" */
+    .bg {
+      background-image: url("/media/home_background.jpg");
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      
+
+    }
+   .canadapic{
+     background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/140630124917-12-canada-most-beautiful-places.jpg");
+     height: 100%;
+     width: 100%;
+   }
+   .uspic{
+    background-image: url("https://www.gannett-cdn.com/presto/2020/05/29/USAT/50f7cfa9-0eff-4662-8dd7-3c94981302fc-LA.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp");
+     height: 100%;
+     width: 100%;
+   }
+   .one79dpic{
+    background-image: url("https://www.mymove.com/wp-content/uploads/2020/08/shutterstock_206243002-scaled.jpg");
+     height: 100%;
+     width: 100%;
+
+   }
+
+   h2 {
+     font-size: 40px;
+     
+   }
+
+   h1{
+     font-size: 25px;
+   }
+   
+
+    </style>
+  
+
+
+   <center>
+    
+    <body>
+      
+
+     <div class = "bg">
+
+   
+
+
+    
+  
+      <div class = "middle">
+        <h1>Stantec participates in the following tax savings programs in the US and Canada</h1>
+          
+         
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+    
+     
+  
+            <span style="font-style: italic;"> SR&ED Credit </span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+     
+         
+  
+            <span style="font-style: italic; text-align: center;">US R&D Tax Credit</span>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            
+            <span style="font-style: italic; text-align: right;">
+              &nbsp;
+              &nbsp;
+              &nbsp;
+              &nbsp;
+         
+              &nbsp; US Building Energy Efficiency Credit(179D)</span>
+            <br>
+            <br>
+            <br>
+            <a href="{% url 'sred' %}">
+            <img style = "height: 280px; width: 280px;" src = "media/canadapic.jpg" />
+            </a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            
+            <a href="{% url 'usrd' %}">
+            <img style = "height: 280px; width: 280px;" src = "media/uspic.jpg" />
+           </a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            <a href="{% url '179d' %}">
+            <img style = "height: 280px; width:280px;" src = "media/one79dpic.jpg" />
+             </a>
+           
+      </div>
+
+     </div>
+    
+    </body>
+   </center>
+</html>
+{% endblock content %}

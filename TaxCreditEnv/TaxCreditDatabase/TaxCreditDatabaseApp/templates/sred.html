@@ -1,0 +1,132 @@
+{% load static %}
+
+{% block content %}
+<!doctype html>
+<html>
+<style>
+    .bg{
+        background-image: url("/media/canadapic.jpg");
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .middle {
+      background-color: white;
+      width: 900px;
+      height: 450px;
+     padding: 10px;
+      margin: 200px;
+      position: relative;
+    }
+    h1{
+        text-align: left;
+        font-size: 25px;
+    }
+</style>
+<center>
+    <body>
+        <div class = "bg">
+   <div class = "middle">
+       <h1>
+        <a href="{% url 'home' %}"> HOME </a> |
+        <a href="{% url 'sred' %}"> SR&ED </a> |
+        <a href="{% url 'usrd' %}"> US R&D </a> |
+        <a href="{% url '179d' %}"> 179D </a>
+       </h1>
+
+<br>
+<br>
+Tax Year
+<br>
+<br>
+From 
+&nbsp;
+
+<select id="fromyear" name="year">
+    <option>Year</option>
+    <option value="2012">2012</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+</select>
+&nbsp;
+
+&nbsp;
+To
+&nbsp;
+&nbsp;
+<select id="toyear" name="year">
+    <option>Year</option>
+    <option value="2013">2013</option>
+    <option value="2014">2014</option>
+    <option value="2015">2015</option>
+    <option value="2016">2016</option>
+    <option value="2017">2017</option>
+    <option value="2018">2018</option>
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+</select>
+&nbsp;
+
+<br>
+<br>
+<label for="PMname">Name of PM: </label>
+<br>
+<input type="text" id="PMname" name="PMname">
+<br>
+<br>
+<label for="Keyword">Keywords in (Project Title): </label>
+<br>
+<input type="text" id="Keyword" name="Keyword">
+<br>
+<br>
+<br>
+
+Display Results By
+<br>
+<select id="sorting" name="sorting">
+    <option>Select</option>
+    <option value="Detailed List of Projects">Detailed List of Projects</option>
+    <option value="Detailed List of Eligable SR&ED Claim Cost">Detailed List of Eligable SR&ED Claim Cost</option>
+    <option value="Detailed List of Total Credit to BCs">Detailed List of Total Credit to BCs</option>
+    <option value="Distributed Credit - Statistics by BC">Distributed Credit - Statistics by BC</option>
+    <option value="Distributed Credit - Statistics by Bs">Distributed Credit - Statistics by BL</option>
+    <option value="Eligable SR&ED Claim Cost - Statistics by BC">Eligable SR&ED Claim Cost - Statistics by BC</option>
+    <option value="Eligable SR&ED Claim Cost - Statistics by B">Eligable SR&ED Claim Cost - Statistics by BL</option>
+    <option value="Eligable SR&ED Claim Cost - Statistics by Province">Eligable SR&ED Claim Cost - Statistics by Province</option>
+  
+</select>
+
+<br>
+<br>
+<br>
+<button onclick="userInput()" style="font-size: 20px;">Search</button>
+</div>
+</div>
+<script>
+   
+    function userInput()
+    {
+    var fromyear = document.getElementById("fromyear").value
+    var toyear = document.getElementById("toyear").value
+    var sorting = document.getElementById("sorting").value
+    var PMname = document.getElementById("PMname").value
+    var Keyword = document.getElementById("Keyword").value
+    console.log(fromyear)
+    console.log(toyear)
+    console.log(PMname)
+    console.log(Keyword)
+    console.log(sorting)
+    // window.location = "{% url 'usrd_DLPbyBC' %}"
+    }
+</script>
+</body>
+</center>
+
+</html>
+{% endblock content %}

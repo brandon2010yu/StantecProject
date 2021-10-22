@@ -1,0 +1,130 @@
+{% load static %}
+
+{% block content %}
+<!doctype html>
+<html>
+
+<style>
+
+    .bg{
+        background-image: url("/media/uspic.jpg");
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .middle {
+      background-color: white;
+      width: 900px;
+      height: 400px;
+     padding: 10px;
+      margin: 200px;
+      position: relative;
+    }
+    h1{
+        text-align: left;
+        font-size: 25px;
+    }
+</style>
+
+  
+<center>
+<body>
+  
+<div class = "bg">
+<div class = "middle">
+    <h1><a href="{% url 'home' %}"> HOME </a> |
+        <a href="{% url 'sred' %}"> SR&ED </a> |
+        <a href="{% url 'usrd' %}"> US R&D </a> |
+        <a href="{% url '179d' %}"> 179D </a></h1>
+
+<br>
+<br>
+Tax Year
+<br>
+<br>
+
+<form method = "POST" action="../usrd_DLPbyBC/">
+    {% csrf_token %}
+    
+    From
+    &nbsp;
+    <select id="fromyear" name="fromyear">
+      <option value="Y2012">2012</option>
+      <option value="Y2013">2013</option>
+      <option value="Y2014">2014</option>
+        <option value="Y2015">2015</option>
+        <option value="Y2016">2016</option>
+        <option value="Y2017">2017</option>
+        <option value="Y2018">2018</option>
+        <option value="Y2019">2019</option>
+        <option value="Y2020">2020</option>
+    </select>
+        &nbsp;
+      
+        &nbsp;
+        To
+        &nbsp;
+        &nbsp;
+    <select id="toyear" name="toyear">
+        <option value="Y2012">2012</option>
+        <option value="Y2013">2013</option>
+        <option value="Y2014">2014</option>
+            <option value="Y2015">2015</option>
+            <option value="Y2016">2016</option>
+            <option value="Y2017">2017</option>
+            <option value="Y2018">2018</option>
+            <option value="Y2019">2019</option>
+            <option value="Y2020">2020</option>
+        </select>   
+        
+  
+  
+
+&nbsp;
+
+<br>
+<br>
+
+Display Distributed Tax Credit By
+<br>
+<select id="sorting" name="sorting">
+    <option>Select</option>
+    
+    <option value="Detailed List of Project by BC">Detailed List of Project by BC</option>
+   
+    <option value="Distributed Cred - Statistics by BC">Distributed Cred - Statistics by BC</option>
+
+    <option value="Distributed Credit - Statistics by BL">Distributed Credit - Statistics by BL</option>
+   
+    <option value="Qualified Research Expenses - Statistics by BC">Qualified Research Expenses - Statistics by BC</option>
+
+    <option value="Qualified Research Expenses - Statistics by BL">Qualified Research Expenses - Statistics by BL</option>
+</select>
+<br>
+<br><br>
+
+<button style = "font-size: 20px;">Search</button>
+</div>
+
+</div>
+
+</form>
+<script>
+   
+    function userInput()
+    {
+    var fromyear = document.getElementById("fromyear").value
+    var toyear = document.getElementById("toyear").value
+    var sorting = document.getElementById("sorting").value
+    console.log(fromyear)
+    console.log(toyear)
+    console.log(sorting)
+    window.location = "{% url 'usrd_DLPbyBC' %}"
+    }
+
+
+</script>
+</body>
+</center>
+</html>
+{% endblock content %}

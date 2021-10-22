@@ -1,0 +1,45 @@
+
+    .middle {
+      background-color: lightsteelblue;
+      width: 1000px;
+      height: 400px;
+      padding: 50px;
+      margin: 150px;
+      position: relative;
+    }
+  
+    .bg {
+      background-image: url("https://www.planetware.com/wpimages/2019/11/canada-in-pictures-beautiful-places-to-photograph-morraine-lake.jpg");
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      
+
+    }
+   .canadapic{
+     background-image: url("https://cdn.cnn.com/cnnnext/dam/assets/140630124917-12-canada-most-beautiful-places.jpg");
+     height: 200px;
+     width: 200px;
+   }
+   .uspic{
+    background-image: url("https://www.gannett-cdn.com/presto/2020/05/29/USAT/50f7cfa9-0eff-4662-8dd7-3c94981302fc-LA.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp");
+     height: 10%;
+     width: 10%;
+   }
+   .one79dpic{
+    background-image: url("https://www.mymove.com/wp-content/uploads/2020/08/shutterstock_206243002-scaled.jpg");
+     height: 10%;
+     width: 10%;
+
+   }
+
+   h2 {
+     font-size: 40px;
+     
+   }
+
+   h1{
+     font-size: 25px;
+   }
+   
+

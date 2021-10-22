@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<body>
+    <table>
+        <tr>
+          <th>BC</th>
+          <th>Y2012</th>
+          <th>Y2013</th>
+          <th>Y2014</th>
+          <th>Y2015</th>
+          <th>Y2016</th>
+          <th>Y2017</th>
+          <th>Y2018</th>
+          <th>Y2019</th>
+          <th>Y2020</th>
+        </tr>
+       
+        {% for result in Book %}
+        <tr>
+            <td>{{result.BC}}</td> 
+            <td>{{result.Y2012}}</td> 
+            <td>{{result.Y2013}}</td> 
+            <td>{{result.Y2014}}</td> 
+            <td>{{result.Y2015}}</td> 
+            <td>{{result.Y2016}}</td> 
+            <td>{{result.Y2017}}</td> 
+            <td>{{result.Y2018}}</td> 
+            <td>{{result.Y2019}}</td> 
+            <td>{{result.Y2020}}</td> 
+        {% endfor %}
+        </tr>
+      </table>
+    
+
+
+</body>
+</html>
