@@ -18,9 +18,10 @@ def display_credit_by_bc(request):
         result_fromyear = request.POST.get('fromyear')
         result_toyear = request.POST.get('toyear')
         result_sorting = request.POST.get('sorting')
+        if result_sorting == None:
+                return render(request, 'usrd.html')
         try:
-            if result_sorting == 'select':
-                return render(request,'usrd.html')
+           
             
             if result_sorting == 'Distributed Cred - Statistics by BC':
 
@@ -85,17 +86,6 @@ def display_credit_by_bc(request):
                 'sumBuildingsTax': sumBuildingsTax,'sumEnergyandResourcesTax': sumEnergyandResourcesTax, 'sumEnvironmentalServicesTax': sumEnvironmentalServicesTax,
                 'sumBLnumber': sumBLnumber,'sumBLtax': sumBLtax})
 
-              
-
-
-
-
-
-
-            if result_sorting == 'Qualified Research Expenses - Statistics by BL':
-                return render(request, 'qre_by_bl.html' )
-
-           
         except credit.DoesNotExist:
             return HttpResponse("no such data")
     else:
