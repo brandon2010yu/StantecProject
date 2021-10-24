@@ -13,7 +13,7 @@ from django.db.models import Q
 # Create your views here.
 def home(request):
     return render(request,'home.html')
-def display_credit_by_bc(request):
+def display_usrd_info(request):
     if request.method == 'POST':
         result_fromyear = request.POST.get('fromyear')
         result_toyear = request.POST.get('toyear')

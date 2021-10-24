@@ -25,8 +25,8 @@ urlpatterns = [
     path('usrd/', views.usrd, name='usrd'),
     path('sred/', views.sred, name='sred'),
     path('179d/', views.one79d, name='179d'),
-    path('credit_by_bc/', views.display_credit_by_bc, name='display_credit_by_bc'),
-    path('display_credit_by_bc/', views.display_credit_by_bc, name= 'display_credit_by_bc')
+    # path('credit_by_bc/', views.display_credit_by_bc, name='display_credit_by_bc'),
+    path('display_usrd/', views.display_usrd_info, name= 'display_usrd')
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
