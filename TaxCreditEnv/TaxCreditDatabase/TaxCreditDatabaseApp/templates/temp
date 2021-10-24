@@ -1,0 +1,30 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<body>
+    <table>
+        <tr>
+          <th>BC</th>
+          <th>Year</th>
+          <th>Credit</th>
+          
+   
+        </tr>
+       
+        {% for result in credit %}
+        <tr>
+            <td>{{result.bc}}</td> 
+            <td>{{result.year}}</td> 
+            <td>{{result.credit}}</td> 
+
+        {% endfor %}
+
+        </tr>
+      </table>
+    
+
+
+</body>
+</html>

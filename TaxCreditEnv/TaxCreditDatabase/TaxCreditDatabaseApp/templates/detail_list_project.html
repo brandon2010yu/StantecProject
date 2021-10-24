@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+
+
+<body>
+    <table>
+            <tr>
+                <th>BC</th>
+                <th>Project Name</th>
+                <th>Project Number</th>
+                <th>PM</th>
+                <th>Sample Project(Y/N)</th>
+              </tr>
+        <tr>
+            {% for project in showProjects %} 
+            <tr>
+                <td>{{project.bc}}</td>
+                <td>{{project.project_name}}</td>
+                <td>{{project.project_number}}</td>
+                <td>{{project.pm}}</td>
+                <td>{{project.sample_project}}</td>
+            </tr>      
+            {% endfor %}
+       
+
+      </table>
+   
+
+
+</body>
+
+</html>

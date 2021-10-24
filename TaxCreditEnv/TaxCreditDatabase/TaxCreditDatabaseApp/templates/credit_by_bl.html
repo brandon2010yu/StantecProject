@@ -1,0 +1,199 @@
+{% load mathfilters %}
+<!doctype html>
+
+<html lang="en">
+
+
+<body>
+    <table>
+            <tr>
+                <th>BL</th>
+                <th>Number(N)</th>
+                <th>Number(%)</th>
+                <th>Total Amount($)</th>
+                <th>Total Amount(%)</th>
+              </tr>
+        <tr>
+             
+            <tr>
+                <td>Water</td>
+            </tr>
+            <tr>
+                <td>Transportation</td>
+            </tr>
+            <tr>
+                <td>Buildings</td>
+            </tr>
+            <tr>
+                <td>Energy & Resources</td>
+            </tr>
+            <tr>
+                <td>Environmental Services</td>
+         </tr> 
+            <tr>
+                <td>{{numberWater}}</td>
+            </tr>
+            <tr>
+                <td>{{numberTransportation}}</td>
+            </tr>
+            <tr>
+                <td>{{numberBuildings}}</td>
+            </tr>
+            <tr>
+                <td>{{numberEnergyandResources}}</td>
+            </tr>
+            <tr>
+                <td>{{numberEnvironmentalServices}}</td>
+        </tr>
+        </tr> 
+            <tr>
+                {% with numerator=numberWater denominator=sumBLnumber %}
+                <td>{{numerator|div:denominator|floatformat:2}}%</td> 
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with numerator=numberTransportation denominator=sumBLnumber %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with numerator=numberBuildings denominator=sumBLnumber %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with numerator=numberEnergyandResources denominator=sumBLnumber %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>
+    <tr>
+                {% with numerator=numberEnvironmentalServices denominator=sumBLnumber %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+                </tr>
+                </tr> 
+                <tr>
+                    <td>${{sumWaterTax.total}}</td>
+                </tr>
+                <tr>
+                    <td>${{sumTransportationTax.total}}</td>
+                </tr>
+                <tr>
+                    <td>${{sumBuildingsTax.total}}</td>
+                </tr>
+                <tr>
+                    <td>${{sumEnergyandResourcesTax.total}}</td>
+                </tr>
+                <tr>
+                    <td>${{sumEnvironmentalServicesTax.total}}</td>
+        </tr> 
+        </tr> 
+                <tr>
+                    {% with numerator=sumWaterTax.total denominator=sumBLtax.sum_BLtax %}
+                    <td>{{numerator|div:denominator}}%</td> 
+                    {% endwith %}
+                </tr>
+                <tr>
+                    {% with numerator=sumTransportationTax.total denominator=sumBLtax.sum_BLtax %}
+                    <td>{{numerator|div:denominator}}%</td> 
+                    {% endwith %}
+                </tr>
+                <tr>
+                    {% with numerator=sumBuildingsTax.total denominator=sumBLtax.sum_BLtax %}
+                    <td>{{numerator|div:denominator}}%</td> 
+                    {% endwith %}
+                </tr>
+                <tr>
+                    {% with numerator=sumEnergyandResourcesTax.total denominator=sumBLtax.sum_BLtax %}
+                    <td>{{numerator|div:denominator}}%</td> 
+                    {% endwith %}
+                </tr>
+                <tr>
+                    {% with numerator=sumEnvironmentalServicesTax.total denominator=sumBLtax.sum_BLtax %}
+                    <td>{{numerator|div:denominator}}%</td> 
+                    {% endwith %}
+        </tr> 
+       
+            <!-- {% for number in numberN %}
+            <tr>
+                <td>{{number.the_count}}</td> 
+            </tr>      
+            {% endfor %}
+            
+            {% for number in numberN %} 
+            <tr>
+                {% with numerator=number.the_count denominator=sumallNumber.the_count %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>      
+            {% endfor %}
+
+            {% for total in sumcreditTax %}
+            <tr>
+                <td>${{total.sum_creditTax}}</td> 
+                </tr>      
+        {% endfor %}
+            </tr>
+      
+        </tr>
+            {% for total in sumcreditTax %} 
+            <tr>
+                {% with numerator=total.sum_creditTax denominator=sumallcreditTax.sum_creditTax %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>      
+            {% endfor %} -->
+            
+
+        
+              
+    
+
+
+        
+        <!-- <tr>
+            <th>Number(N)</th>
+          </tr>
+         
+          {% for number in numberN %}
+          
+          <tr>
+              <td>{{number.the_count}}</td> 
+          </tr>       
+          {% endfor %} -->
+                 
+          
+          <!-- <tr>
+            <th>BC</th>
+            <th>Number(N)</th>
+            <th>Number(%)</th>
+            <th>Total Amount($)</th>
+            <th>Amount(%)</th>
+      
+          </tr>
+         
+          {% for result in uniqueBC %}
+          
+          <tr>
+              <td>{{result.bc}}</td> 
+              <td>{{sum.sumCredit}}</td> 
+              <td>{{result.credit}}</td> 
+          </tr>       
+          {% endfor %} -->
+       
+
+      </table>
+      <br>
+      <tr>
+        <th>TOTAL</th>
+        <th>{{sumBLnumber}}</th>
+        <th>100%</th>
+        <th>{{sumBLtax.sum_BLtax}}</th> 
+        <th>100%</th>
+      
+    </tr>
+
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+{% load mathfilters %}
+<!doctype html>
+
+<html lang="en">
+
+
+<body>
+    <table>
+            <tr>
+                <th>BC</th>
+                <th>Number(N)</th>
+                <th>Number(%)</th>
+                <th>Total Amount($)</th>
+                <th>Total Amount(%)</th>
+              </tr>
+        <tr>
+            {% for result in uniqueBC %} 
+            <tr>
+                <td>{{result.bc}}</td> 
+            </tr>      
+            {% endfor %}
+            
+            {% for number in numberN %}
+            <tr>
+                <td>{{number.the_count}}</td> 
+            </tr>      
+            {% endfor %}
+            
+            {% for number in numberN %} 
+            <tr>
+                {% with numerator=number.the_count denominator=sumallNumber.the_count %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>      
+            {% endfor %}
+
+            {% for total in sumcreditTax %}
+            <tr>
+                <td>${{total.sum_creditTax}}</td> 
+                </tr>      
+        {% endfor %}
+            </tr>
+      
+        </tr>
+            {% for total in sumcreditTax %} 
+            <tr>
+                {% with numerator=total.sum_creditTax denominator=sumallcreditTax.sum_creditTax %}
+                <td>{{numerator|div:denominator}}%</td> 
+                {% endwith %}
+            </tr>      
+            {% endfor %}
+            
+
+        
+              
+    
+
+
+        
+        <!-- <tr>
+            <th>Number(N)</th>
+          </tr>
+         
+          {% for number in numberN %}
+          
+          <tr>
+              <td>{{number.the_count}}</td> 
+          </tr>       
+          {% endfor %} -->
+                 
+          
+          <!-- <tr>
+            <th>BC</th>
+            <th>Number(N)</th>
+            <th>Number(%)</th>
+            <th>Total Amount($)</th>
+            <th>Amount(%)</th>
+      
+          </tr>
+         
+          {% for result in uniqueBC %}
+          
+          <tr>
+              <td>{{result.bc}}</td> 
+              <td>{{sum.sumCredit}}</td> 
+              <td>{{result.credit}}</td> 
+          </tr>       
+          {% endfor %} -->
+       
+
+      </table>
+      <br>
+      <tr>
+        <th>TOTAL</th>
+        <th>{{sumallNumber.the_count}}</th>
+        <th>100%</th>
+        <th>{{sumallcreditTax.sum_creditTax}}</th> 
+        <th>100%</th>
+      
+    </tr>
+
+
+</body>
+
+</html>
