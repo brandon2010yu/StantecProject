@@ -2,10 +2,103 @@
 <!doctype html>
 
 <html lang="en">
+    <style>
+        {
+            box-sizing: border-box;
+        }
+        /* Set additional styling options for the columns */
+        .column {
+        float: left;
+        }
+    
+        /* Set width length for the left, right and middle columns */
+        .left {
+        width: 25%;
+        }
+    
+        .middle {
+        width: 18%;
+        }
+        
+        .right {
+        width: 20%;
+        }
+    
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        </style>
 
 
 <body>
-    <table>
+    <div class="column left" style="background-color:#FFB695;">
+        <h2>BC</h2>
+        {% for result in uniqueBC %} 
+        <p>
+                {{result.bc}}
+            </p>         
+            {% endfor %}
+            <br>
+            <b style= "font-size: 30px;">TOTAL</b>
+    </div>
+    <div class="column middle" style="background-color:#96D1CD;">
+        <h2>Number(N)</h2>
+        {% for number in numberN %}
+        <p>
+         
+                {{number.the_count}}
+          
+        </p> 
+            {% endfor %}
+            <br>
+            <b style= "font-size: 30px;">{{sumallNumber.the_count}}</b>
+    </div>
+    <div class="column middle" style="background-color:#74C3E1;">
+        <h2>Number(%)</h2>
+        {% for number in numberN %} 
+        <p>
+           
+                {% with numerator=number.the_count denominator=sumallNumber.the_count %}
+                {{numerator|div:denominator|floatformat:2}}%
+                {% endwith %}
+            </p>      
+            {% endfor %}
+            <br>
+            <b style= "font-size: 30px;">100%</b>      
+            
+    </div>
+    <div class="column middle" style="background-color:#96D1CD;">
+        <h2>Total Amount($)</h2>
+        
+        {% for total in sumcreditTax %}
+        <p>    
+                ${{total.sum_creditTax}} 
+                  
+            </p>           
+            {% endfor %}
+            <br>
+            <b style= "font-size: 30px;">{{sumallcreditTax.sum_creditTax}}</b>    
+            
+    </div>
+    <div class="column right" style="background-color:#74C3E1;">
+        <h2>Total Amount(%)</h2>
+        {% for total in sumcreditTax %} 
+        <p>
+      
+     
+            {% with numerator=total.sum_creditTax denominator=sumallcreditTax.sum_creditTax %}
+            {{numerator|div:denominator|floatformat:2}}%
+            {% endwith %}
+        </p>    
+        {% endfor %}
+        <br>
+        <b style= "font-size: 30px;">100%</b> 
+             
+            
+    </div>
+    <!-- <table>
             <tr>
                 <th>BC</th>
                 <th>Number(N)</th>
@@ -48,7 +141,7 @@
                 <td>{{numerator|div:denominator}}%</td> 
                 {% endwith %}
             </tr>      
-            {% endfor %}
+            {% endfor %} -->
             
 
         
@@ -88,7 +181,7 @@
           {% endfor %} -->
        
 
-      </table>
+      <!-- </table>
       <br>
       <tr>
         <th>TOTAL</th>
@@ -97,7 +190,7 @@
         <th>{{sumallcreditTax.sum_creditTax}}</th> 
         <th>100%</th>
       
-    </tr>
+    </tr> -->
 
 
 </body>

@@ -2,19 +2,122 @@
 
 <html lang="en">
 
+    <!-- <style>
+        {
+            box-sizing: border-box;
+        }
+        /* Set additional styling options for the columns */
+        .column {
+        float: left;
+        }
+    
+        /* Set width length for the left, right and middle columns */
+        .left {
+        width: 25%;
+        }
+    
+        .middle {
+        width: 18%;
+        }
+        
+        .right {
+        width: 18%;
+        }
+    
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+        </style> -->
+
+
+<!-- <body>
+    
+    <div class="row">
+        <div class="column left" style="background-color:#FFB695;">
+            <h2>BC</h2>
+            {% for project in showProjects %}
+            <p>
+                {{project.bc}}
+            </p>
+            {% endfor %}
+        </div>
+        <div class="column middle" style="background-color:#96D1CD;">
+            <h2>Project Name</h2>
+            {% for project in showProjects %} 
+            <p>
+                {{project.project_name}}
+            </p>
+            {% endfor %}
+        </div>
+        <div class="column right" style="background-color:#74C3E1;">
+            <h2>Project Number</h2>
+            {% for project in showProjects %} 
+            <p>
+                {{project.project_number}}
+            </p>
+            {% endfor %}
+        </div>
+        <div class="column right" style="background-color:#96D1CD;">
+            <h2>PM</h2>
+            {% for project in showProjects %} 
+
+            <p>
+                {{project.pm}}
+            </p>
+            {% endfor %}
+        </div>
+        <div class="column right" style="background-color:#74C3E1;">
+            <h2>Sample Project</h2>
+            {% for project in showProjects %} 
+            <p>
+                {{project.sample_project}}
+            </p>
+            {% endfor %}
+        </div>
+    </div> -->
+
+
+
+<style>
+    table {
+       
+        width: 100%;
+        border: 1px solid black;
+        background-color: #96D1CD;
+
+    }
+
+   .header
+   {
+      text-align: left;
+      font-size: 25px;
+   
+      
+   }
+
+
+</style>
+
 
 <body>
+
     <table>
-            <tr>
+           
+            <tr class="header">
                 <th>BC</th>
                 <th>Project Name</th>
                 <th>Project Number</th>
                 <th>PM</th>
                 <th>Sample Project(Y/N)</th>
               </tr>
+              <tr height="10px"></tr>
         <tr>
+            
             {% for project in showProjects %} 
             <tr>
+               
                 <td>{{project.bc}}</td>
                 <td>{{project.project_name}}</td>
                 <td>{{project.project_number}}</td>
@@ -25,9 +128,8 @@
        
 
       </table>
-   
-
-
+ 
+    
 </body>
 
 </html>

@@ -24,7 +24,7 @@ def display_credit_by_bc(request):
             
             if result_sorting == 'Distributed Cred - Statistics by BC':
 
-                uniqueBC = credit.objects.filter(year__gte=result_fromyear, year__lte=result_toyear).values('bc').distinct()
+                uniqueBC = credit.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,creditTax__gte=0).values('bc').distinct()
                 numberN = credit.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,creditTax__gte=0).values('bc').order_by('bc').annotate(the_count=Count('bc'))
                 sumcreditTax = credit.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,creditTax__gte=0).annotate(sum_creditTax=Sum('creditTax'))
                 sumallNumber = credit.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,creditTax__gte=0).aggregate(the_count=Count('bc'))
@@ -38,7 +38,7 @@ def display_credit_by_bc(request):
             
             if result_sorting == 'Qualified Research Expenses - Statistics by BC':
 
-                uniqueBC = qre.objects.filter(year__gte=result_fromyear, year__lte=result_toyear).values('bc').distinct()
+                uniqueBC = qre.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,qreTax__gte=0).values('bc').distinct()
                 numberN = qre.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,qreTax__gte=0).values('bc').order_by('bc').annotate(the_count=Count('bc'))
                 sumcreditTax = qre.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,qreTax__gte=0).annotate(sum_creditTax=Sum('qreTax'))
                 sumallNumber = qre.objects.filter(year__gte=result_fromyear, year__lte=result_toyear,qreTax__gte=0).aggregate(the_count=Count('bc'))
