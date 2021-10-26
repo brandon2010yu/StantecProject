@@ -40,11 +40,19 @@
            <div class="row">
                <div class="column left" style="background-color:#FFB695;">
                    <h2>BL</h2>
+
                    <p>Water</p>
                    <p>Transportation</p>
                    <p>Buildings</p>
-                   <p>Energy & Resources</p>
                    <p>Environmental Services</p>
+                   <p>Community Development</p>
+                   <p>Mining</p>
+                   <p>Oil & Gas</p>
+                   <p>Power & Dams</p>
+                   <p>Business Line Services-US</p>
+                   <p>Innovation Office</p>
+                   <p>Federal Program</p>
+                   <p>Practice Services</p>
                    <br>
                    <b style= "font-size: 30px;">TOTAL</b>
 
@@ -54,8 +62,15 @@
                    <p>{{numberWater}}</p>
                    <p>{{numberTransportation}}</p>
                    <p>{{numberBuildings}}</p>
-                   <p>{{numberEnergyandResources}}</p>
                    <p>{{numberEnvironmentalServices}}</p>
+                   <p>{{numberCommunityDevelopment}}</p>
+                   <p>{{numberMining}}</p>
+                   <p>{{numberOilandGas}}</p>
+                   <p>{{numberPowerandDams}}</p>
+                   <p>{{numberBusinessLineServices}}</p>
+                   <p>{{numberInnovationOffice}}</p>
+                   <p>{{numberFederalProgram}}</p>
+                   <p>{{numberPracticeServices}}</p>
                    <br>
                    <b style= "font-size: 30px;">{{sumBLnumber}}</b>
                </div>
@@ -64,73 +79,160 @@
                    {% with numerator=numberWater denominator=sumBLnumber %}
                    <p> 
                        
-                    {{numerator|div:denominator|floatformat:2}}% 
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
                 </p>
                     {% endwith %}
                     {% with numerator=numberTransportation denominator=sumBLnumber %}
                     <p> 
                         
-                     {{numerator|div:denominator|floatformat:2}}% 
+                     {{numerator|div:denominator|mul:100|floatformat:2}}% 
                  </p>
                      {% endwith %}
                      {% with numerator=numberBuildings denominator=sumBLnumber %}
                      <p> 
                          
-                      {{numerator|div:denominator|floatformat:2}}% 
+                      {{numerator|div:denominator|mul:100|floatformat:2}}% 
                   </p>
                       {% endwith %}
-                      {% with numerator=numberEnergyandResources denominator=sumBLnumber %}
-                      <p> 
-                          
-                       {{numerator|div:denominator|floatformat:2}}% 
-                   </p>
-                       {% endwith %}
                        {% with numerator=numberEnvironmentalServices denominator=sumBLnumber %}
                        <p> 
                            
-                        {{numerator|div:denominator|floatformat:2}}% 
+                        {{numerator|div:denominator|mul:100|floatformat:2}}% 
                     </p>
                         {% endwith %}
+                        {% with numerator=numberCommunityDevelopment denominator=sumBLnumber %}
+                        <p> 
+                            
+                         {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                     </p>
+                         {% endwith %}
+                         {% with numerator=numberMining denominator=sumBLnumber %}
+                         <p> 
+                             
+                          {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                      </p>
+                          {% endwith %}
+                          {% with numerator=numberOilandGas denominator=sumBLnumber %}
+                          <p> 
+                              
+                           {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                       </p>
+                           {% endwith %}
+                           {% with numerator=numberPowerandDams denominator=sumBLnumber %}
+                           <p> 
+                               
+                            {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                        </p>
+                            {% endwith %}
+                            {% with numerator=numberBusinessLineServices denominator=sumBLnumber %}
+                            <p> 
+                                
+                             {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                         </p>
+                             {% endwith %}
+                             {% with numerator=numberInnovationOffice denominator=sumBLnumber %}
+                             <p> 
+                                 
+                              {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                          </p>
+                              {% endwith %}
+                              {% with numerator=numberFederalProgram denominator=sumBLnumber %}
+                              <p> 
+                                  
+                               {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                           </p>
+                               {% endwith %}
+                               {% with numerator=numberPracticeServices denominator=sumBLnumber %}
+                               <p> 
+                                   
+                                {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                            </p>
+                                {% endwith %}
                         <br>
                         <b style= "font-size: 30px;">100%</b>
                </div>
+     
                <div class="column right" style="background-color:#96D1CD;">
                 <h2>Total Amount($)</h2>
-                <p>${{sumWaterTax.total}}</p>
-                <p>${{sumTransportationTax.total}}</p>
-                <p>${{sumBuildingsTax.total}}</p>
-                <p>${{sumEnergyandResourcesTax.total}}</p>
-                <p>${{sumEnvironmentalServicesTax.total}}</p>
+                <p>${{sumWaterTax.total|floatformat:0}}</p>
+                <p>${{sumTransportationTax.total|floatformat:0}}</p>
+                <p>${{sumBuildingsTax.total|floatformat:0}}</p>
+                <p>${{sumEnvironmentalServicesTax.total|floatformat:0}}</p>
+                <p>${{sumCommunityDevelopmentTax.total|floatformat:0}}</p>
+                <p>${{sumMiningTax.total|floatformat:0}}</p>
+                <p>${{sumOilandGasTax.total|floatformat:0}}</p>
+                <p>${{sumPowerandDamsTax.total|floatformat:0}}</p>
+                <p>${{sumBusinessLineServicesTax.total|floatformat:0}}</p>
+                <p>${{sumInnovationOfficeTax.total|floatformat:0}}</p>
+                <p>${{sumFederalProgramTax.total|floatformat:0}}</p>
+                <p>${{sumPracticeServicesTax.total|floatformat:0}}</p>
                 <br>
-                <b style= "font-size: 30px;">{{sumBLtax.sum_BLtax}}</b>
+                <b style= "font-size: 30px;">${{sumBLtax.sum_BLtax|floatformat:0}}</b>
             </div>
             <div class="column right" style="background-color:#74C3E1;">
                 <h2>Total Amount(%)</h2>
                 {% with numerator=sumWaterTax.total denominator=sumBLtax.sum_BLtax %}
                 <p>
-                    {{numerator|div:denominator|floatformat:2}}% 
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
                 </p>
                     {% endwith %}
                 {% with numerator=sumTransportationTax.total denominator=sumBLtax.sum_BLtax %}
                 <p>
-                    {{numerator|div:denominator|floatformat:2}}% 
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
                 </p>
                     {% endwith %}
                 {% with numerator=sumBuildingsTax.total denominator=sumBLtax.sum_BLtax %}
                 <p>
-                    {{numerator|div:denominator|floatformat:2}}% 
-                </p>
-                    {% endwith %}
-                {% with numerator=sumEnergyandResourcesTax.total denominator=sumBLtax.sum_BLtax %}
-                <p>
-                    {{numerator|div:denominator|floatformat:2}}% 
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
                 </p>
                     {% endwith %}
                 {% with numerator=sumEnvironmentalServicesTax.total denominator=sumBLtax.sum_BLtax %}
                 <p>
-                    {{numerator|div:denominator|floatformat:2}}% 
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
                 </p>
                     {% endwith %}
+                
+                    {% with numerator=sumCommunityDevelopmentTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumMiningTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumOilandGasTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumPowerandDamsTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                    {% with numerator=sumBusinessLineServicesTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumInnovationOfficeTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumFederalProgramTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                {% with numerator=sumPracticeServicesTax.total denominator=sumBLtax.sum_BLtax %}
+                <p>
+                    {{numerator|div:denominator|mul:100|floatformat:2}}% 
+                </p>
+                    {% endwith %}
+                    
                     <br>
                     <b style= "font-size: 30px;">100%</b>
             </div>

@@ -62,7 +62,7 @@
         <p>
            
                 {% with numerator=number.the_count denominator=sumallNumber.the_count %}
-                {{numerator|div:denominator|floatformat:2}}%
+                {{numerator|div:denominator|mul:100|floatformat:2}}%
                 {% endwith %}
             </p>      
             {% endfor %}
@@ -75,12 +75,12 @@
         
         {% for total in sumcreditTax %}
         <p>    
-                ${{total.sum_creditTax}} 
+                ${{total.sum_creditTax|floatformat:0}} 
                   
             </p>           
             {% endfor %}
             <br>
-            <b style= "font-size: 30px;">{{sumallcreditTax.sum_creditTax}}</b>    
+            <b style= "font-size: 30px;">${{sumallcreditTax.sum_creditTax|floatformat:0}}</b>    
             
     </div>
     <div class="column right" style="background-color:#74C3E1;">
@@ -90,7 +90,7 @@
       
      
             {% with numerator=total.sum_creditTax denominator=sumallcreditTax.sum_creditTax %}
-            {{numerator|div:denominator|floatformat:2}}%
+            {{numerator|div:denominator|mul:100|floatformat:2}}%
             {% endwith %}
         </p>    
         {% endfor %}

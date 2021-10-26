@@ -22,6 +22,7 @@ class credit(models.Model):
     bc = models.CharField(max_length=100, primary_key=True )
     year = models.IntegerField(max_length=100)
     creditTax = models.CharField(max_length=100)
+    bl = models.CharField(max_length=100)
     class Meta:
         db_table = "credit"
 
@@ -29,6 +30,7 @@ class qre(models.Model):
     bc = models.CharField(max_length=100, primary_key=True )
     year = models.IntegerField(max_length=100)
     qreTax = models.CharField(max_length=100)
+    bl = models.CharField(max_length=100)
     class Meta:
         db_table = "qre"
 

@@ -16,13 +16,16 @@
       background-color: white;
       width: 900px;
       height: 400px;
-     padding: 10px;
+      padding: 10px;
       margin: 200px;
-      position: relative;
+      position: center;
+      font-size: 25px;
+      font-weight: bold;
+      
     }
     h1{
         text-align: left;
-        font-size: 25px;
+        font-size: 18px;
     }
 </style>
 
@@ -37,7 +40,6 @@
         <a href="{% url 'usrd' %}"> US R&D </a> |
         <a href="{% url '179d' %}"> 179D </a></h1>
 
-<br>
 <br>
 Tax Year
 <br>
@@ -85,7 +87,7 @@ Tax Year
 <br>
 <br>
 
-Display Distributed Tax Credit By
+Display Distributed Tax Credit By:
 <br>
 <select id="sorting" name="sorting">
     <!-- <option aria-placeholder="Select">Select</option> -->
